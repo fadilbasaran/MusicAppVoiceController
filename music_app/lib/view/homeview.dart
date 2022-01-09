@@ -10,13 +10,11 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late final HomeViewController _controller;
+  final HomeViewController _controller = Get.put(HomeViewController());
 
   @override
   void initState() {
     super.initState();
-    _controller = Get.put(HomeViewController());
-    _controller.playMusic();
   }
 
   @override
@@ -34,8 +32,17 @@ class _HomeViewState extends State<HomeView> {
               color: Colors.amber,
             ),
             Obx(() => IconButton(
-                  onPressed: () => null,
-                  icon: Icon(_controller.isMicOpen ? Icons.mic_off : Icons.mic),
+                  onPressed: () {
+                    if (_controller.isMicOpen) {
+                      _controller.isMicOpen = !_controller.isMicOpen;
+                      _controller.playMusic();
+                    } else {
+
+                      _controller.isMicOpen = !_controller.isMicOpen;
+                      _controller.stopPlaying();
+                    }
+                  },
+                  icon: _controller.isMicOpen ? Icon(Icons.mic_off) : Icon(Icons.mic),
                 ))
           ],
         ),
