@@ -23,7 +23,6 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
-        //width:MediaQuery.of(context).size.width;
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
@@ -33,10 +32,10 @@ class _HomeViewState extends State<HomeView> {
               height: 200,
               color: Colors.amber,
             ),
-            IconButton(
-              onPressed: () => null,
-              icon: const Icon(Icons.mic),
-            )
+            Obx(() => IconButton(
+                  onPressed: () => null,
+                  icon: Icon(_controller.isMicOpen ? Icons.mic_off : Icons.mic),
+                ))
           ],
         ),
       ),
