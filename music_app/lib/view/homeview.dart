@@ -16,6 +16,7 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     _controller = Get.put(HomeViewController());
+    _controller.playMusic();
   }
 
   @override
