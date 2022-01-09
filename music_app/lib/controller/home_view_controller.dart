@@ -6,7 +6,7 @@ class HomeViewController extends GetxController {
 
   @override
   void initState() {
-  audioPlayer = AudioCache();
+  audioPlayer = AudioCache(prefix: "/assets");
   playMusic();
     
   }
