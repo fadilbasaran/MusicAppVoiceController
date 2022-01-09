@@ -1,14 +1,13 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:get/get.dart';
-class HomeViewController extends GetxController {
-  late final AudioCache audioPlayer;
 
+class HomeViewController extends GetxController {
+  static late AudioCache audioPlayer;
 
   @override
   void initState() {
-  audioPlayer = AudioCache(prefix: "/assets");
-  playMusic();
-    
+    audioPlayer = AudioCache(prefix: "/assets");
+    playMusic();
   }
 
   void playMusic() {
