@@ -17,6 +17,7 @@ class HomeViewController extends GetxController {
     _audioPlayer.pause();
   }
 
+
   final RxBool _isMicOpen = false.obs;
   bool get isMicOpen => _isMicOpen.value;
   set isMicOpen(bool value) => _isMicOpen.value = value;

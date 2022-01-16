@@ -42,7 +42,7 @@ class _HomeViewState extends State<HomeView> {
                       _controller.stopPlaying();
                     }
                   },
-                  icon: _controller.isMicOpen ? Icon(Icons.mic_off) : Icon(Icons.mic),
+                  icon: _controller.isMicOpen ? const Icon(Icons.mic_off) : const Icon(Icons.mic),
                 ))
           ],
         ),
